@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container
+    if (msg)
+      #feedbackmsg
+        i.fa.fa-thumbs-down(style="font-size: 1.4em")
+        |  #{msg}
+    form#login-form(action='/login' method='post')
+      h1.text-center(style="margin: 0") Ships!
+      label name
+      input(type='text' name='username' placeholder="captain's name").form-control
+      label password
+      input(type='password' name='password' placeholder="secret password").form-control
+      button(type='submit')#login-submit-btn.btn.btn-danger Log in Captain!

@@ -1,0 +1,53 @@
+if (isAuthenticated)
+  .container
+    p#hint
+    nav#gameNav.navbar.navbar-dark.bg-primary
+      .navbar-header
+        span.navbar-brand Ahoy #{user.name}!
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-left
+          li.nav-item.pull-left
+            a#do.leaveTooltip.nav-link(onclick='leaveGame("#{user.name}")' data-toggle="tooltip" data-placement="bottom" title="Leave game")
+              i.fa.fa-hand-o-left
+          li.nav-item.pull-left
+            a#hinterTooltip.nav-link(onclick='toggleHinter()' data-toggle="tooltip" data-placement="bottom" title="Toggle hints")
+              i.fa.fa-check-square
+        ul.nav.navbar-nav.navbar-right
+          li.nav-item.pull-right
+            a#signOutTooltip.nav-link(href="logout" data-toggle="tooltip" data-placement="bottom" title="Leave ships")
+              i.fa.fa-sign-out
+          li.nav-item.pull-right
+            a.nav-link(data-toggle="modal" data-target="#help")
+              #helpTooltip(style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1000" data-toggle="tooltip" data-placement="bottom" title="Show help")
+              i.fa.fa-question-circle
+    include _helper
+    .row.gameData
+      .col-md-6
+        h2.text-center Your ships
+          span#hostState
+            button.toggleStatusTooltip#hostStateButton.notReady(type="button" onclick="readyUp()" data-toggle="tooltip" data-placement="right" title="Change status")
+              i.fa.fa-hand-paper-o
+        table#ownedShips
+          tbody
+            - for (var i = 0; i < 10; i++)
+              tr(class='row-'+i)
+                - for (var j = 0; j < 10; j++)
+                  td.friendlyWater
+                    .box(id='crd-you-'+i+j)
+      .col-md-6
+        h2.text-center Pirates
+          span#guestState
+            #guestStateButton.notReady
+              i.fa.fa-hand-paper-o
+        table#enemyShips
+          tbody
+            - for (var i = 0; i < 10; i++)
+              tr(class='row-'+i)
+                - for (var j = 0; j < 10; j++)
+                  td.enemyWater
+                    .box(id='crd-enemy-'+i+j)
+    nav#gameInfo.navbar.navbar-dark.bg-primary.invisible
+    script.
+      animateMainContent();
+      animateGameBoard();
+      init();

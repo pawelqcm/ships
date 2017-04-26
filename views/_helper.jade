@@ -1,0 +1,101 @@
+#help.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header(style="background-color: #5883b7")
+        i.fa.fa-2x.fa-book.text-center(style="color: white")
+        h3.text-center(style="display: inline; color: white")  How to play?
+      .modal-body
+        h4
+          i.fa.fa-hand-o-right.manualHint
+          |  Selecting the game
+        p
+        | When logged in you can see a list of other players and their games. From there you can:
+        br
+        i.fa.fa-circle-o
+        |  join an existing game ( &nbsp;
+        i.fa.fa-play(style="color: #ff5e7c")
+        |  button on the right will be available );
+        br
+        i.fa.fa-circle-o
+        |  start a new game ( just click &nbsp;
+        i.fa.fa-play-circle(style="color: #5883b7")
+        |  icon on the left of your navigation bar).
+        br
+        hr
+        h4
+          i.fa.fa-hand-o-right.manualHint
+          |  Starting the game
+        | After creating (or connecting to) a game you will see two boards:
+        br
+        | Yours is on the left. Your opponent's on the right.
+        br
+        | Before game starts you have to set your status to ready by clicking &nbsp;
+        i.fa.fa-hand-paper-o(style="color: #ff5e7c")
+        |  icon.
+        br
+        | To do that place all of your ships (20 blocks in total) on your board.
+        .text-danger
+          | Warning: block's sides have to touch and the longest ship can have max 4 blocks!
+        br
+        | Typical set would contain:
+        br
+        | 1x 4-block: &nbsp;
+        - for (var i = 0; i < 4; i++)
+          i.fa.fa-2x.fa-square(style="color: #5883b7; margin-right: .1em;")
+        br
+        | 2x 3-block: &nbsp;
+        - for (var i = 0; i < 2; i++)
+          i.fa.fa-2x.fa-square(style="color: #5883b7; margin-right: .1em;")
+          i.fa.fa-2x.fa-square(style="color: #5883b7; margin-right: .1em;")
+          i.fa.fa-2x.fa-square(style="color: #5883b7; margin-right: .5em;")
+        br
+        | 3x 2-block: &nbsp;
+        - for (var i = 0; i < 3; i++)
+          i.fa.fa-2x.fa-square(style="color: #5883b7; margin-right: .1em;")
+          i.fa.fa-2x.fa-square(style="color: #5883b7; margin-right: .5em;")
+        br
+        | 4x 1-block: &nbsp;
+        - for (var i = 0; i < 4; i++)
+          i.fa.fa-2x.fa-square(style="color: #5883b7; margin-right: .5em;")
+        br
+        br
+        | After placing your ships and changing your status, you are ready to go! (And your status will be shown as ready, like this: &nbsp;
+        i.fa.fa-thumbs-o-up(style="color: #ff0b43")
+        |  ). When both players are ready, the game will start.
+        hr
+        h4
+          i.fa.fa-hand-o-right.manualHint
+          |  In game
+        p
+        | You and your opponent shoot alternately.
+        br
+        | If you hit some enemy ship, you can shoot again.
+        br
+        | The game ends when you shoot down all of the ships or loose your own.
+        hr
+        h4
+          i.fa.fa-hand-o-right.manualHint
+          |  Ship color
+        p
+        | Color of a ship reflects its state:
+        br
+        i.fa.fa-2x.fa-square(style="color: #5883b7; margin: .2em;")
+        p(style="display: inline; color: #5883b7") floating
+        i.fa.fa-2x.fa-square(style="color: #ff0b43; margin: .2em;")
+        p(style="display: inline; color: #ff0b43") hit (still floating)
+        i.fa.fa-2x.fa-square(style="color: #593f84; margin: .2em;")
+        p(style="display: inline; color: #593f84") sunk
+        br
+        hr
+        h4
+          i.fa.fa-hand-o-right.manualHint
+          |  Enabling visual hints
+        p
+        |  When you see that you shot down a whole ship, you can assume that there will not be a single ship around it.
+        | You can then automatically paint all of these empty blocks by clicking &nbsp;
+        i.fa.fa-check-square(style="color: #5883b7")
+        |  icon) while playing (enabled by default).
+      .modal-footer
+        p.text-center(style="font-size: .9em!important; color: #ff0b43")
+          | * This game is based on a popular pencil and paper game called 'Battleship' *
+        button.btn.btn-default(type="button" data-dismiss="modal" style="color: #ff5e7c") Close

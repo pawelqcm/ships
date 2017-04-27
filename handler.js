@@ -530,7 +530,6 @@ module.exports = function (socket, io) {
             } else { // the game is running
                 callback('The game has begun!');
             }
-            console.log(b.board);
         }
     });
 

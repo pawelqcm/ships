@@ -11,3 +11,7 @@ and then
 ```javascript
 node bin/www
 ```
+### Demo screenshots:
+
+![Demo screenshot 1](demo_1.png)
+![Demo screenshot 2](demo_2.png)
